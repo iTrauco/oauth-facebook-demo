@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OAuth Facebook Strategy</title>
+</head>
+<body>
+    <!-- 'onclick' prevent blocking of popup | http://bit.ly/2IwShaB @ 08:31; approx -->
+    <a href="" id="loginbtn" onclick="javascript:loginWithFacebook()"> Login w/ Facebook</a>
+
+    <!-- http://bit.ly/2Iy0z20 @ 05:04; approx -->
+    <!-- Functioned called by FB SDK upon execution-->
+        <script>
+                window.fbAsyncInit = function() {
+                  FB.init({
+                    appId      : '332023781004749',
+                    cookie     : true,
+                    xfbml      : true,
+                    version    : 'v3.1'
+                  });
+                    
+                  FB.AppEvents.logPageView();   
+                  // http://bit.ly/2IwShaB @ 05:37; approx
+                  //fbSDKLoaded()
+                };
+              
+                (function(d, s, id){
+                   var js, fjs = d.getElementsByTagName(s)[0];
+                   if (d.getElementById(id)) {return;}
+                   js = d.createElement(s); js.id = id;
+                   js.src = "https://connect.facebook.net/en_US/sdk.js";
+                   fjs.parentNode.insertBefore(js, fjs);
+                 }(document, 'script', 'facebook-jssdk'));
+              </script>
+
+              <script src="/script.js"></script>
+<!-- 'onclick' prevent blocking of popup | http://bit.ly/2IwShaB @ 08:31; approx
+    <a id="loginbtn" onclick="javascript:loginWithFacebook()"> Login w/ Facebook</a> -->
+</body>
+</html>
